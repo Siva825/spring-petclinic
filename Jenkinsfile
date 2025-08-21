@@ -1,9 +1,9 @@
  pipeline{
     agent any
-    environment{
-        HOST_URL= "https://35.192.108.118:9000"
+    /*environment{
+        HOST_URL= "http://35.192.108.118:9000"
         SONAR_TOKEN= credentials('sonarqube_token')
-    }
+    }*/
     tools{
         jdk 'jdk17'
         maven 'maven-3.8.9'
@@ -29,12 +29,13 @@
                 echo "********** code analysis is done ***********"
                 dir('spring-petclinic'){
                 sh '''
-                mvn clean verify sonar:sonar \
-                    -Dsonar.projectKey=project-1 \
-                    -Dsonar.projectName='project-1' \
-                    -Dsonar.host.url=${HOST_URL}  \
-                    -Dsonar.token=${SONAR_TOKEN}
-                    -DskipTests
+                 mvn clean verify sonar:sonar \
+                -Dsonar.projectKey=project-1 \
+                -Dsonar.projectName='project-1' \
+                -Dsonar.host.url=http://35.192.108.118:9000 \
+                -Dsonar.token=sqp_e3a2c5428ef64f0bca8ca5fbcdffcb00f64f796b
+                -DskipTests \
+                -Dcyclonedx.skip=true 
                 '''
                 }
             }
