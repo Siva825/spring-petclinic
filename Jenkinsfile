@@ -1,7 +1,7 @@
  pipeline{
     agent any
     environment{
-        HOST_URL= "http://35.192.108.118:9000"
+        HOST_URL= "https://35.192.108.118:9000"
         SONAR_TOKEN= credentials('sonarqube_token')
     }
     tools{
