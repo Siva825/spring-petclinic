@@ -5,8 +5,8 @@
         SONAR_TOKEN= credentials('sonarqube_token')
     }
     tools{
-        jdk= 'jdk17'
-        maven = 'maven-3.8.9'
+        jdk 'jdk17'
+        maven 'maven-3.8.9'
     }
     stages{
         stage('checkout'){
