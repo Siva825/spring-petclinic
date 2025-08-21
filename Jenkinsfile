@@ -1,7 +1,7 @@
  pipeline{
     agent any
     environment{
-        HOST_URL= "https://35.192.108.118:9000"
+        HOST_URL= "http://35.192.108.118:9000"
         SONAR_TOKEN= credentials('sonarqube_token')
     }
     tools{
@@ -32,8 +32,8 @@
                 mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=project-1 \
                     -Dsonar.projectName='project-1' \
-                    -Dsonar.host.url=${HOST_URL} \
-                    -Dsonar.token=${SONAR_TOKEN} \
+                    -Dsonar.host.url=${HOST_URL}  \
+                    -Dsonar.token=${SONAR_TOKEN}
                     -DskipTests
                 '''
                 }
