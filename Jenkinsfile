@@ -32,8 +32,8 @@
                 mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=project-1 \
                     -Dsonar.projectName='project-1' \
-                    -Dsonar.host.url= ${HOST_URL}  \
-                    -Dsonar.token= ${SONAR_TOKEN}
+                    -Dsonar.host.url=${HOST_URL}  \
+                    -Dsonar.token=${SONAR_TOKEN}
                 '''
                 }
             }
