@@ -32,7 +32,7 @@
                  mvn clean verify sonar:sonar \
                 -Dsonar.projectKey=project-1 \
                 -Dsonar.projectName='project-1' \
-                -Dsonar.host.url=http://35.192.108.118:9000 \
+                -Dsonar.host.url=https://35.192.108.118:9000 \
                 -Dsonar.token=sqp_e3a2c5428ef64f0bca8ca5fbcdffcb00f64f796b
                 -DskipTests \
                 -Dcyclonedx.skip=true 
