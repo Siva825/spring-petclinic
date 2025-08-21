@@ -1,7 +1,7 @@
  pipeline{
     agent any
     environment{
-        HOST_URL= "https://35.192.108.118:9000"
+        HOST_URL= "http://35.192.108.118:9000"
         SONAR_TOKEN= credentials('sonarqube_token')
     }
     tools{
@@ -20,7 +20,7 @@
             steps{
                 echo "********** building is done ************"
                 dir('spring-petclinic'){
-                    sh'mvn clean package -DskipTests'
+                    sh'mvn clean package -DskipTests -Dcyclonedx.skip=true'
                 }
             }
         }
