@@ -1,8 +1,12 @@
-pipeline{
+ pipeline{
     agent any
     environment{
         HOST_URL= "http://35.192.108.118:9000"
         SONAR_TOKEN= credentials('sonarqube_token')
+    }
+    tools{
+        jdk= 'jdk17'
+        maven = 'maven-3.8.9'
     }
     stages{
         stage('checkout'){
