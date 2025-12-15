@@ -1,0 +1,25 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springpetclinic-deploy
+  namespace: siva-k8s
+  labels:
+    app: python-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      # imagePullSecrets:
+      #   - name: gar-connection
+      containers:
+      - name: c23
+        image: siva2626/petclinic1234:v1
+        ports:
+        - containerPort: 5000
